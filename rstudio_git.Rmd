@@ -33,6 +33,11 @@ output:
 
 # Getting Started with Git
 
+## TIMTOWTDI
+- Use RStudio's git controls
+- Use git from the command line
+- Use another git client
+
 ## New Repo
 - Log into github.com and create a new repository (project)
   - Public
@@ -67,5 +72,9 @@ output:
 - Can use GitHub Pages to render HTML output
   - Repo settings → Pages
 
+# Additional info
 
-  
+## References
+- RStudio Version Control: https://support.rstudio.com/hc/en-us/articles/200532077
+- GitHub and RStudio: https://resources.github.com/github-and-rstudio/
+- Happy Git and GitHub for the useR: https://happygitwithr.com/
