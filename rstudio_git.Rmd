@@ -8,7 +8,8 @@ output:
 
 # Overview of git and GitHub
 
-## Backup
+## Why Software Version Control?
+- Backup
 - Deploy on multiple computers - work from anywhere
 - Keep track of changes - revert if needed
 - Freeing (do you have large, commented out sections or multiple versons of the same file?)
