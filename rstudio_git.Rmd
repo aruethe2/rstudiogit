@@ -3,7 +3,7 @@ title: "Using Git with RStudio"
 author: Andrew Ruether
 date: July 5, 2022
 output:
-  output: ioslides_presentation
+  output: github_document
 ---
 
 # Overview of git and GitHub
