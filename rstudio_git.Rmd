@@ -44,7 +44,7 @@ output:
   - Public
   - Add a README
   - .gitignore ==> Select R
-  - License: https://choosealicense.com/
+  - License: https://choosealicense.com
 
 ## Make some changes
 - Click on the pencil icon to the right of the README.md file
