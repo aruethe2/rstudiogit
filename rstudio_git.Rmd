@@ -62,6 +62,10 @@ output:
   - Commit changes
   - Push to remote
 
+## Publishing
+- GitHub can render .md files → `output: github_document`
+- Can use GitHub Pages to render HTML output
+  - Repo settings → Pages
 
 
   
