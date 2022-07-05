@@ -19,7 +19,7 @@ output:
   - Deploy automatically to production server
   - Keep track of issues
 
-## Git vs. GitHub
+## Git versus GitHub
 - git - open source software version control program
   - Used to keep track of changes to software, allow multiple people to work on the same code, deal with conflicts
   - Most widely used
