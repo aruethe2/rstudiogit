@@ -1,3 +1,4 @@
 # rstudiogit
 
-This is my reasonably good Git/RStudio presentation
+This is my okay Git/RStudio presentation
+
