@@ -9,9 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Andrew Ruether" />
 
+<meta name="date" content="2022-07-05" />
 
-<title>R Notebook</title>
+<title>Using Git with RStudio</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1762,37 +1764,107 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">R Notebook</h1>
+<h1 class="title toc-ignore">Using Git with RStudio</h1>
+<h4 class="author">Andrew Ruether</h4>
+<h4 class="date">July 5, 2022</h4>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Cmd+Shift+Enter</em>.</p>
+<div id="overview-of-git-and-github" class="section level1">
+<h1>Overview of git and GitHub</h1>
+<div id="backup" class="section level2">
+<h2>Backup</h2>
+<ul>
+<li>Deploy on multiple computers - work from anywhere</li>
+<li>Keep track of changes - revert if needed</li>
+<li>Freeing (do you have large, commented out sections or multiple
+versons of the same file?)</li>
+<li>Collaboration</li>
+<li>Fancier use cases
+<ul>
+<li>Run automated tests</li>
+<li>Deploy automatically to production server</li>
+<li>Keep track of issues</li>
+</ul></li>
+</ul>
+</div>
+<div id="git-vs.-github" class="section level2">
+<h2>Git vs. GitHub</h2>
+<ul>
+<li>git - open source software version control program
+<ul>
+<li>Used to keep track of changes to software, allow multiple people to
+work on the same code, deal with conflicts</li>
+<li>Most widely used</li>
+<li>Command line</li>
+</ul></li>
+<li>GitHub - company formed to create services around git
+<ul>
+<li>GitHub.com</li>
+<li>GitHub Enterprise (github.swarthmore.edu)</li>
+<li>Nice website</li>
+<li>Issues, wikis, collaboration tool, web publishing</li>
+<li>Most widely used (alternative - GitLab)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="getting-started-with-git" class="section level1">
+<h1>Getting Started with Git</h1>
+<div id="new-repo" class="section level2">
+<h2>New Repo</h2>
+<ul>
+<li>Log into github.com and create a new repository (project)
+<ul>
+<li>Public</li>
+<li>Add a README</li>
+<li>.gitignore ==&gt; Select R</li>
+<li>License: <a href="https://choosealicense.com/" class="uri">https://choosealicense.com/</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="make-some-changes" class="section level2">
+<h2>Make some changes</h2>
+<ul>
+<li>Click on the pencil icon to the right of the README.md file</li>
+<li>Make some edits in markdown format</li>
+<li>Commit changes</li>
+<li>Repeat</li>
+<li>View commits log</li>
+</ul>
+</div>
+<div id="connect-rstudio-to-github" class="section level2">
+<h2>Connect RStudio to GitHub</h2>
+<ul>
+<li>Create a new GitHub authentication token
+<ul>
+<li>Settings → Developer Settings → Personal Access Tokens</li>
+<li>User, repo, gist, workflow permissions</li>
+</ul></li>
+<li>Save token somewhere safe (e.g. LastPass)<br />
+</li>
+<li>In RStudio: gitcreds::gitcreds_set()</li>
+</ul>
+</div>
+<div id="create-new-rstudio-version-control-project" class="section level2">
+<h2>Create new RStudio Version Control Project</h2>
+<ul>
+<li>New Project → Version Control → Git</li>
+<li>Paste in Repo url (HTTPS)</li>
+<li>Make changes</li>
+<li>Git pane
+<ul>
+<li>Commit changes</li>
+<li>Push to remote</li>
+</ul></li>
+</ul>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
-<!-- rnb-text-end -->
+</div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OgogICNnaXRodWJfZG9jdW1lbnQ6IGRlZmF1bHQKICBodG1sX2RvY3VtZW50OgogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdAogIHBkZl9kb2N1bWVudDogZGVmYXVsdAotLS0KClRoaXMgaXMgYW4gW1IgTWFya2Rvd25dKGh0dHA6Ly9ybWFya2Rvd24ucnN0dWRpby5jb20pIE5vdGVib29rLiBXaGVuIHlvdSBleGVjdXRlIGNvZGUgd2l0aGluIHRoZSBub3RlYm9vaywgdGhlIHJlc3VsdHMgYXBwZWFyIGJlbmVhdGggdGhlIGNvZGUuIAoKVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkNtZCtTaGlmdCtFbnRlciouIAoKYGBge3J9CnBsb3QoY2FycykKYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiVXNpbmcgR2l0IHdpdGggUlN0dWRpbyIKYXV0aG9yOiBBbmRyZXcgUnVldGhlcgpkYXRlOiBKdWx5IDUsIDIwMjIKb3V0cHV0OgogIG91dHB1dDogaW9zbGlkZXNfcHJlc2VudGF0aW9uCi0tLQoKIyBPdmVydmlldyBvZiBnaXQgYW5kIEdpdEh1YgoKIyMgQmFja3VwCi0gRGVwbG95IG9uIG11bHRpcGxlIGNvbXB1dGVycyAtIHdvcmsgZnJvbSBhbnl3aGVyZQotIEtlZXAgdHJhY2sgb2YgY2hhbmdlcyAtIHJldmVydCBpZiBuZWVkZWQKLSBGcmVlaW5nIChkbyB5b3UgaGF2ZSBsYXJnZSwgY29tbWVudGVkIG91dCBzZWN0aW9ucyBvciBtdWx0aXBsZSB2ZXJzb25zIG9mIHRoZSBzYW1lIGZpbGU/KQotIENvbGxhYm9yYXRpb24KLSBGYW5jaWVyIHVzZSBjYXNlcwogIC0gUnVuIGF1dG9tYXRlZCB0ZXN0cwogIC0gRGVwbG95IGF1dG9tYXRpY2FsbHkgdG8gcHJvZHVjdGlvbiBzZXJ2ZXIKICAtIEtlZXAgdHJhY2sgb2YgaXNzdWVzCgojIyBHaXQgdnMuIEdpdEh1YgotIGdpdCAtIG9wZW4gc291cmNlIHNvZnR3YXJlIHZlcnNpb24gY29udHJvbCBwcm9ncmFtCiAgLSBVc2VkIHRvIGtlZXAgdHJhY2sgb2YgY2hhbmdlcyB0byBzb2Z0d2FyZSwgYWxsb3cgbXVsdGlwbGUgcGVvcGxlIHRvIHdvcmsgb24gdGhlIHNhbWUgY29kZSwgZGVhbCB3aXRoIGNvbmZsaWN0cwogIC0gTW9zdCB3aWRlbHkgdXNlZAogIC0gQ29tbWFuZCBsaW5lCgotIEdpdEh1YiAtIGNvbXBhbnkgZm9ybWVkIHRvIGNyZWF0ZSBzZXJ2aWNlcyBhcm91bmQgZ2l0CiAgLSBHaXRIdWIuY29tCiAgLSBHaXRIdWIgRW50ZXJwcmlzZSAoZ2l0aHViLnN3YXJ0aG1vcmUuZWR1KQogIC0gTmljZSB3ZWJzaXRlCiAgLSBJc3N1ZXMsIHdpa2lzLCBjb2xsYWJvcmF0aW9uIHRvb2wsIHdlYiBwdWJsaXNoaW5nCiAgLSBNb3N0IHdpZGVseSB1c2VkIChhbHRlcm5hdGl2ZSAtIEdpdExhYikKCiMgR2V0dGluZyBTdGFydGVkIHdpdGggR2l0CgojIyBOZXcgUmVwbwotIExvZyBpbnRvIGdpdGh1Yi5jb20gYW5kIGNyZWF0ZSBhIG5ldyByZXBvc2l0b3J5IChwcm9qZWN0KQogIC0gUHVibGljCiAgLSBBZGQgYSBSRUFETUUKICAtIC5naXRpZ25vcmUgPT0+IFNlbGVjdCBSCiAgLSBMaWNlbnNlOiBodHRwczovL2Nob29zZWFsaWNlbnNlLmNvbS8KCiMjIE1ha2Ugc29tZSBjaGFuZ2VzCi0gQ2xpY2sgb24gdGhlIHBlbmNpbCBpY29uIHRvIHRoZSByaWdodCBvZiB0aGUgUkVBRE1FLm1kIGZpbGUKLSBNYWtlIHNvbWUgZWRpdHMgaW4gbWFya2Rvd24gZm9ybWF0Ci0gQ29tbWl0IGNoYW5nZXMKLSBSZXBlYXQKLSBWaWV3IGNvbW1pdHMgbG9nCiAgCiMjIENvbm5lY3QgUlN0dWRpbyB0byBHaXRIdWIKLSBDcmVhdGUgYSBuZXcgR2l0SHViIGF1dGhlbnRpY2F0aW9uIHRva2VuCiAgLSBTZXR0aW5ncyDihpIgRGV2ZWxvcGVyIFNldHRpbmdzIOKGkiBQZXJzb25hbCBBY2Nlc3MgVG9rZW5zCiAgLSBVc2VyLCByZXBvLCBnaXN0LCB3b3JrZmxvdyBwZXJtaXNzaW9ucwotIFNhdmUgdG9rZW4gc29tZXdoZXJlIHNhZmUgKGUuZy4gTGFzdFBhc3MpICAKLSBJbiBSU3R1ZGlvOiBnaXRjcmVkczo6Z2l0Y3JlZHNfc2V0KCkKCiMjIENyZWF0ZSBuZXcgUlN0dWRpbyBWZXJzaW9uIENvbnRyb2wgUHJvamVjdAotIE5ldyBQcm9qZWN0IOKGkiBWZXJzaW9uIENvbnRyb2wg4oaSIEdpdCAKLSBQYXN0ZSBpbiBSZXBvIHVybCAoSFRUUFMpCi0gTWFrZSBjaGFuZ2VzCi0gR2l0IHBhbmUKICAtIENvbW1pdCBjaGFuZ2VzCiAgLSBQdXNoIHRvIHJlbW90ZQoKCgogIAo=</div>
 
 
 

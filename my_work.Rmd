@@ -1,24 +1,67 @@
 ---
-title: "R Notebook"
+title: "Using Git with RStudio"
+author: Andrew Ruether
+date: July 5, 2022
 output:
-  #github_document: default
-  html_document:
-    df_print: paged
-  html_notebook: default
-  pdf_document: default
+  output: ioslides_presentation
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+# Overview of git and GitHub
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+## Backup
+- Deploy on multiple computers - work from anywhere
+- Keep track of changes - revert if needed
+- Freeing (do you have large, commented out sections or multiple versons of the same file?)
+- Collaboration
+- Fancier use cases
+  - Run automated tests
+  - Deploy automatically to production server
+  - Keep track of issues
 
-```{r}
-plot(cars)
-```
+## Git vs. GitHub
+- git - open source software version control program
+  - Used to keep track of changes to software, allow multiple people to work on the same code, deal with conflicts
+  - Most widely used
+  - Command line
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+- GitHub - company formed to create services around git
+  - GitHub.com
+  - GitHub Enterprise (github.swarthmore.edu)
+  - Nice website
+  - Issues, wikis, collaboration tool, web publishing
+  - Most widely used (alternative - GitLab)
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+# Getting Started with Git
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+## New Repo
+- Log into github.com and create a new repository (project)
+  - Public
+  - Add a README
+  - .gitignore ==> Select R
+  - License: https://choosealicense.com/
 
+## Make some changes
+- Click on the pencil icon to the right of the README.md file
+- Make some edits in markdown format
+- Commit changes
+- Repeat
+- View commits log
+  
+## Connect RStudio to GitHub
+- Create a new GitHub authentication token
+  - Settings → Developer Settings → Personal Access Tokens
+  - User, repo, gist, workflow permissions
+- Save token somewhere safe (e.g. LastPass)  
+- In RStudio: gitcreds::gitcreds_set()
+
+## Create new RStudio Version Control Project
+- New Project → Version Control → Git 
+- Paste in Repo url (HTTPS)
+- Make changes
+- Git pane
+  - Commit changes
+  - Push to remote
+
+
+
+  
